@@ -1,0 +1,423 @@
+{
+  "intents": [
+    {
+      "intent": "tell_me_about",
+      "examples": [
+        {
+          "text": "define skruls",
+          "mentions": [
+            {
+              "entity": "object_of_interest",
+              "location": [
+                7,
+                13
+              ]
+            }
+          ]
+        },
+        {
+          "text": "defini soccer",
+          "mentions": [
+            {
+              "entity": "object_of_interest",
+              "location": [
+                7,
+                13
+              ]
+            }
+          ]
+        },
+        {
+          "text": "difine love",
+          "mentions": [
+            {
+              "entity": "object_of_interest",
+              "location": [
+                7,
+                11
+              ]
+            }
+          ]
+        },
+        {
+          "text": "harry potter",
+          "mentions": [
+            {
+              "entity": "object_of_interest",
+              "location": [
+                0,
+                12
+              ]
+            }
+          ]
+        },
+        {
+          "text": "tell me about football",
+          "mentions": [
+            {
+              "entity": "object_of_interest",
+              "location": [
+                14,
+                22
+              ]
+            }
+          ]
+        },
+        {
+          "text": "tell me about Harry Potter"
+        },
+        {
+          "text": "tell me about Star Wars",
+          "mentions": [
+            {
+              "entity": "object_of_interest",
+              "location": [
+                14,
+                23
+              ]
+            }
+          ]
+        },
+        {
+          "text": "tell me more about Luke Skywalker",
+          "mentions": [
+            {
+              "entity": "object_of_interest",
+              "location": [
+                19,
+                33
+              ]
+            }
+          ]
+        },
+        {
+          "text": "what is the of gravity",
+          "mentions": [
+            {
+              "entity": "object_of_interest",
+              "location": [
+                15,
+                22
+              ]
+            }
+          ]
+        },
+        {
+          "text": "what is the smartphone",
+          "mentions": [
+            {
+              "entity": "object_of_interest",
+              "location": [
+                12,
+                22
+              ]
+            }
+          ]
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "object_of_interest",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Aplle",
+          "synonyms": [
+            "IOS",
+            "Iphone"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Batman",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Conta Zap",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Cristiano Ronaldo",
+          "synonyms": [
+            "CR7",
+            "Robozão"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Dell",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "dollar",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Earth",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Facebook",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "football",
+          "synonyms": [
+            "soccer"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "gravity",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Harry Potter",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "heart",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Human Body",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "IBM",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "love",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Luke Skywalker",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Marvel Comics",
+          "synonyms": [
+            "MCU"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Messi",
+          "synonyms": [
+            "ET",
+            "Lionel Messi"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Novo Mercado",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Samsung",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "smartphone",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "soccer",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Star Wars",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "stone",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "wise up",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "webhooks": [
+    {
+      "url": "https://us-south.functions.appdomain.cloud/api/v1/web/107e0357-9806-4a5f-b884-c35dcdce6c38/default/Wikipedia-Summary.json",
+      "name": "main_webhook",
+      "headers": []
+    }
+  ],
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_3_1635097453613",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "actions": [
+        {
+          "name": "main_webhook",
+          "type": "webhook",
+          "parameters": {
+            "object_of_interest": "@object_of_interest"
+          },
+          "result_variable": "webhook_result_1"
+        }
+      ],
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#tell_me_about && @object_of_interest",
+      "dialog_node": "node_3_1635097453613",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I am defining @object_of_interest:<? $webhook_result_1.extract.extract ?>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "$webhook_result_1.extract.title",
+            "source": "$webhook_result_1.extract.thumbnail.source",
+            "description": "$webhook_result_1.extract.description",
+            "response_type": "image"
+          }
+        ]
+      },
+      "parent": "node_3_1635097453613",
+      "conditions": "$webhook_result_1.extract.thumbnail",
+      "dialog_node": "response_2_1635099309617"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I am defining  @object_of_interest:<?$webhook_result_1.extract.extract ?>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1635097453613",
+      "conditions": "$webhook_result_1.extract.type=='standard'",
+      "dialog_node": "response_7_1635098119705",
+      "previous_sibling": "response_2_1635099309617"
+    },
+    {
+      "type": "response_condition",
+      "parent": "node_3_1635097453613",
+      "conditions": "anything_else",
+      "dialog_node": "response_9_1635098121777",
+      "previous_sibling": "response_7_1635098119705"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello. How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Wikipedia - Chatbot",
+  "language": "en",
+  "description": ""
+}
