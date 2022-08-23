@@ -1,0 +1,1385 @@
+{
+  "intents": [
+    {
+      "intent": "Conhecer",
+      "examples": [
+        {
+          "text": "conhecer"
+        },
+        {
+          "text": "Quero Conhecer"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Escolher",
+      "examples": [
+        {
+          "text": "Escolher"
+        },
+        {
+          "text": "Escolher outro"
+        },
+        {
+          "text": "Escolher outro plano"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "cep_validacao",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "cep_valido",
+          "patterns": [
+            "\\d{2}( ?[.-] ?| )?\\d{3}( ?[.-] ?| )?[\\d]{3}$"
+          ]
+        }
+      ],
+      "fuzzy_match": false
+    },
+    {
+      "entity": "cpf_validacao",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "cpf_valido",
+          "patterns": [
+            "^((\\d{3})[ -.]?(\\d{3})[ -.]?(\\d{3})[ -./]?(\\d{2}))$"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "data_validacao",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "barra3digitos",
+          "patterns": [
+            "(\\/|-|\\.)\\d{3}$"
+          ]
+        },
+        {
+          "type": "patterns",
+          "value": "data_valida",
+          "patterns": [
+            "(?:(?:31(\\/|-|\\.)(?:0?[13578]|1[02]))(\\/|-|\\.)|(?:(?:29|30)(\\/|-|\\.)(?:0?[13-9]|1[0-2])(\\/|-|\\.)))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:29(\\/|-|\\.)0?2(\\/|-|\\.)(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26]|00)))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\/|-|\\.)(?:(?:0?[1-9])|(?:1[0-2]))(\\/|-|\\.)(?:(?:1[6-9]|[2-9]\\d)?\\d{2})"
+          ]
+        }
+      ],
+      "fuzzy_match": false
+    },
+    {
+      "entity": "nome_validacao",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "nome_valido",
+          "patterns": [
+            "^(?i)\\p{L}+ \\p{L}{1,}( \\p{L}+)*$"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "numero_validacao",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "numero_invalido",
+          "synonyms": [
+            "(\\d+( ?[\\/-] ?| )?[a-zA-Z]{1}|[a-zA-Z]{1}( ?[\\/-] ?| )?\\d+)$"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Planos",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "enterprise",
+          "synonyms": [
+            "plano 3"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "plus",
+          "synonyms": [
+            "plano 2"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "standard",
+          "synonyms": [
+            "plano 1"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "SmallTalks",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Assentir",
+          "synonyms": [
+            "aceitar",
+            "aceito",
+            "afirmativo",
+            "belê",
+            "beleza",
+            "blz",
+            "certo",
+            "claro",
+            "combinado",
+            "com certeza",
+            "concordo",
+            "confirmo",
+            "crt",
+            "de acordo",
+            "demoro",
+            "está bem",
+            "eu quero",
+            "eu topo",
+            "firmeza",
+            "isso",
+            "ok",
+            "oks",
+            "pode ser",
+            "positivo",
+            "quero",
+            "sim",
+            "só se for agora",
+            "tá",
+            "ta bem",
+            "tá bem",
+            "tá bom",
+            "tdb",
+            "td bem",
+            "td certo",
+            "tô dentro",
+            "topo",
+            "tudo bem",
+            "tudo certo"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Encerrar",
+          "synonyms": [
+            "cala a boca",
+            "chega de papo",
+            "encerra bot",
+            "encerrar chat",
+            "fim",
+            "finalizar",
+            "parar",
+            "silenciar"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Não",
+          "synonyms": [
+            "dispenso",
+            "jamais",
+            "ñ",
+            "nada",
+            "não quero",
+            "naum",
+            "nda",
+            "negativo",
+            "nenhum",
+            "no",
+            "noa",
+            "nop",
+            "nope",
+            "not",
+            "nunca",
+            "sem interesse"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Obrigado",
+          "synonyms": [
+            "agradecida",
+            "agradecido",
+            "danke",
+            "grata",
+            "grato",
+            "obg",
+            "obrigada",
+            "obrigadp",
+            "obrigads",
+            "ogb",
+            "thank",
+            "thanks",
+            "tkn",
+            "tkns",
+            "valeu"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Quero",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Saudação",
+          "synonyms": [
+            "boa noite",
+            "boa tarde",
+            "bom dia",
+            "e ae",
+            "eai",
+            "fala",
+            "hello",
+            "hey",
+            "hi",
+            "oi",
+            "oii",
+            "olá",
+            "ooi",
+            "salve",
+            "slv"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Sim",
+          "synonyms": [
+            "aham",
+            "bora",
+            "claro",
+            "correto",
+            "desejo",
+            "lógico",
+            "positivo",
+            "quero",
+            "s",
+            "si",
+            "siim",
+            "vamo",
+            "vamos",
+            "yep",
+            "yes"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Tchau",
+          "synonyms": [
+            "adeus",
+            "até amanhã",
+            "até logo",
+            "até mais",
+            "bye",
+            "chau",
+            "depois",
+            "flw",
+            "mais tarde",
+            "outra hora",
+            "xau"
+          ]
+        }
+      ],
+      "fuzzy_match": false
+    },
+    {
+      "entity": "sys-number",
+      "values": [],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "webhooks": [
+    {
+      "url": "https://us-south.functions.appdomain.cloud/api/v1/web/9d176edf-b4a7-47ad-8a63-9d34851270a2/default/testeDevHublab.json",
+      "name": "main_webhook",
+      "headers": []
+    }
+  ],
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Bem-vindo",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Olá, sou o *Assistente Virtual da Hubchat* e tenho uma ótima notícia para você! 🥳\n\nNossos planos de assinatura estão com descontos incríveis para este mês! 🚀\n\nTemos diversos planos e você pode ter acesso agora mesmo!\n\nBora conhecer!?\n"
+              },
+              {
+                "text": "1 - Quero conhecer\n"
+              },
+              {
+                "text": "2 - Agora não"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Bem-vindo"
+    },
+    {
+      "type": "standard",
+      "title": "Em outros casos",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Opa, por enquanto, ainda não temos essa opção.\n\n"
+              },
+              {
+                "text": "Vou te levar ao inicio novamente. 😉"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "Bem-vindo"
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Em outros casos",
+      "previous_sibling": "Bem-vindo",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_9_1659038330951",
+      "event_name": "input",
+      "dialog_node": "handler_10_1659038330963"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_9_1659038330951",
+      "event_name": "focus",
+      "dialog_node": "handler_5_1659038330963",
+      "previous_sibling": "handler_10_1659038330963"
+    },
+    {
+      "type": "standard",
+      "title": "Data Nascimento",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Agora, preciso de sua data de nascimento.\n"
+              },
+              {
+                "text": "Exemplo: 17/05/1998\n"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_5_1659037832676",
+      "context": {},
+      "conditions": "$nome",
+      "dialog_node": "node_10_1659040855753",
+      "previous_sibling": "node_1_1659038992442"
+    },
+    {
+      "type": "standard",
+      "title": "SIM - Pede Número",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Agora, por favor, informe o número da residência."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_2_1659041140810",
+      "conditions": "@sys-number:1 || @SmallTalks:Sim",
+      "dialog_node": "node_10_1659304289096"
+    },
+    {
+      "type": "standard",
+      "title": "CPF",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_5_1659037832676",
+      "context": {
+        "cpf": "<? @cpf_validacao.literal.replaceAll('[^1234567890]', '') ?>"
+      },
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "@cpf_validacao || @sys-number",
+      "dialog_node": "node_1_1659038566642"
+    },
+    {
+      "type": "standard",
+      "title": "Nome Completo",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Me informe seu nome completo, por favor.\n"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_5_1659037832676",
+      "context": {},
+      "conditions": "$valida_cpf",
+      "dialog_node": "node_1_1659038992442",
+      "previous_sibling": "node_8_1659038782420"
+    },
+    {
+      "type": "standard",
+      "title": "CEP Inválido",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Se precisar, pode consultar no link dos correios abaixo.😉\n"
+              },
+              {
+                "text": "http://www.buscacep.correi os.com.br/sistemas/buscace p/buscaCepEndereco.cfm\n"
+              },
+              {
+                "text": "Vou te levar ao inicio novamente."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_4_1659040962931",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "Bem-vindo"
+      },
+      "conditions": "!@sys-number || !@cep_validacao",
+      "dialog_node": "node_1_1659041622247",
+      "previous_sibling": "node_7_1659307467897"
+    },
+    {
+      "type": "standard",
+      "title": "Nome Válido",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_1_1659038992442",
+      "context": {
+        "nome": "<? input.text ?>"
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_10_1659040855753"
+      },
+      "conditions": "@nome_validacao:nome_valido",
+      "dialog_node": "node_1_1659306242778"
+    },
+    {
+      "type": "standard",
+      "title": "Consulta CEP | API",
+      "parent": "node_7_1659307467897",
+      "actions": [
+        {
+          "name": "main_webhook",
+          "type": "webhook",
+          "parameters": {
+            "action": "dataCep",
+            "zipCode": "$ENDcep"
+          },
+          "result_variable": "valida_cep"
+        }
+      ],
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "@cep_validacao",
+      "dialog_node": "node_2_1659041140810"
+    },
+    {
+      "type": "standard",
+      "title": "anything_else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Opa, por enquanto, ainda não temos essa opção.\n"
+              },
+              {
+                "text": "Vou te levar ao inicio novamente. 😉"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_3_1659488432953",
+      "conditions": "anything_else",
+      "dialog_node": "node_2_1659490057481",
+      "previous_sibling": "node_6_1659489292614"
+    },
+    {
+      "type": "standard",
+      "title": "1 - Quero Conhecer",
+      "parent": "Bem-vindo",
+      "actions": [
+        {
+          "name": "main_webhook",
+          "type": "webhook",
+          "parameters": {
+            "action": "plans"
+          },
+          "result_variable": "planos"
+        }
+      ],
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@SmallTalks:Sim || @sys-number:1 || #Conhecer || @SmallTalks:Quero",
+      "dialog_node": "node_3_1658938488258"
+    },
+    {
+      "type": "standard",
+      "title": "Escolha Planos",
+      "parent": "node_3_1658938488258",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@sys-number || @Planos",
+      "dialog_node": "node_3_1659017268666"
+    },
+    {
+      "type": "standard",
+      "title": "Número válido",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_10_1659304289096",
+      "context": {
+        "nCasa": "<? entities['sys-number'].literal ?>"
+      },
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "@sys-number || @numero_validacao",
+      "dialog_node": "node_3_1659488432953"
+    },
+    {
+      "type": "standard",
+      "title": "2 - Agora não",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "OK, sem problemas!\n\nCaso mude de ideia, estaremos aqui prontos para atender seu pedido.\n\nSe precisar de mais alguma coisa, você pode entrar em contato diretamente com nossa central no numero 0800 321 2121\n\nAté logo! 😉"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "Bem-vindo",
+      "conditions": "@SmallTalks:Não || @sys-number:2",
+      "dialog_node": "node_4_1658938547973",
+      "previous_sibling": "node_3_1658938488258"
+    },
+    {
+      "type": "standard",
+      "title": "Direcionamento",
+      "parent": "node_8_1659038782420",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "true",
+      "dialog_node": "node_4_1659039104057"
+    },
+    {
+      "type": "standard",
+      "title": "CEP",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Obrigado <? $nome ?>\n"
+              },
+              {
+                "text": "Pra seguir com a assinatura, precisamos garantir que os planos estejam disponíveis na sua região.\n"
+              },
+              {
+                "text": "Me informa por favor o número do CEP do local onde você quer assinar no formato XXXXXXXX."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_5_1659037832676",
+      "context": {},
+      "conditions": "$data",
+      "dialog_node": "node_4_1659040962931",
+      "previous_sibling": "node_10_1659040855753"
+    },
+    {
+      "type": "standard",
+      "title": "Número inválido",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Opa, é necessário digitar um número para prosseguir."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_10_1659304289096",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_10_1659304289096"
+      },
+      "conditions": "@numero_validacao:numero_invalido || !@sys-number",
+      "dialog_node": "node_4_1659488694180",
+      "previous_sibling": "node_3_1659488432953"
+    },
+    {
+      "type": "standard",
+      "title": "Data inválida",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Opa, preciso de uma data de nascimento válida.\n"
+              },
+              {
+                "text": "Exemplo: 01/05/1995"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_10_1659040855753",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_10_1659040855753"
+      },
+      "conditions": "!@data_validacao || @sys-number || !@sys-number",
+      "dialog_node": "node_4_1659561052727",
+      "previous_sibling": "node_5_1659305606531"
+    },
+    {
+      "type": "standard",
+      "title": "1 - Quero esse plano",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Que ótimo que podemos te atender com esse serviço!🥰\n\nVamos lá, digite o CPF do titular da assinatura para continuarmos."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1659017268666",
+      "context": {},
+      "conditions": "@sys-number:1 || @Planos",
+      "dialog_node": "node_5_1659037832676"
+    },
+    {
+      "type": "standard",
+      "title": "CPF | API",
+      "parent": "node_1_1659038566642",
+      "actions": [
+        {
+          "name": "main_webhook",
+          "type": "webhook",
+          "parameters": {
+            "action": "validateDocument",
+            "document": "$cpf"
+          },
+          "result_variable": "valida_cpf"
+        }
+      ],
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "$cpf || @sys-number || @cpf_validacao:cpf_valido",
+      "dialog_node": "node_5_1659038283522"
+    },
+    {
+      "type": "standard",
+      "title": "Data válida",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_10_1659040855753",
+      "context": {
+        "data": "<? @data_validacao.literal.replaceAll('[.-]', '/') ?>"
+      },
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_4_1659040962931"
+      },
+      "conditions": "@data_validacao:data_valida",
+      "dialog_node": "node_5_1659305606531"
+    },
+    {
+      "type": "standard",
+      "title": "2- Escolher outro plano",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_3_1659017268666",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_3_1658938488258"
+      },
+      "conditions": "@sys-number:2 || #Escolher",
+      "dialog_node": "node_6_1659037560826",
+      "previous_sibling": "node_5_1659037832676"
+    },
+    {
+      "type": "standard",
+      "title": "Envia dados | API",
+      "parent": "node_3_1659488432953",
+      "actions": [
+        {
+          "name": "main_webhook",
+          "type": "webhook",
+          "parameters": {
+            "action": "order",
+            "payload": "( $cpf, $bairro, $CEP, $plain_id, $uf, $nome, $cidade)"
+          },
+          "result_variable": "orderrequest"
+        }
+      ],
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@sys-number || @numero_validacao",
+      "dialog_node": "node_6_1659489292614"
+    },
+    {
+      "type": "standard",
+      "title": "NÃO",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_2_1659041140810",
+      "context": {},
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_4_1659040962931"
+      },
+      "conditions": "@sys-number:2 || @SmallTalks:Não",
+      "dialog_node": "node_7_1659042136205",
+      "previous_sibling": "node_10_1659304289096"
+    },
+    {
+      "type": "standard",
+      "title": "CEP Válido",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_4_1659040962931",
+      "context": {
+        "ENDcep": "<? @cep_validacao.literal.replaceAll('[^1234567890]', '') ?>"
+      },
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "@cpf_validacao || @sys-number",
+      "dialog_node": "node_7_1659307467897"
+    },
+    {
+      "type": "standard",
+      "title": "Confirma CPF",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Preciso que você digite o CPF do titular da assinatura para podermos validar essa operação.\n"
+              },
+              {
+                "text": "Vamos lá, digite o CPF do titular da assinatura para continuarmos."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_5_1659037832676",
+      "conditions": "!@sys-number || !@cep_validacao",
+      "dialog_node": "node_8_1659038782420",
+      "previous_sibling": "node_1_1659038566642"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Confirme seu pedido:\n\n🌐 Plano por assinatura <? $planos.plans[2].name ?>\n\nTOTAL\n\nValor PROMOCIONAL: R$ <? $planos.plans[2].free_agents ?>,00\n\n-------------------------------------\n\nTaxa de adesão: GRÁTIS\n\n-------------------------------------\n"
+              },
+              {
+                "text": "1 - Quero esse plano\n"
+              },
+              {
+                "text": "2 - Escolher outro plano"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_3_1659017268666",
+      "context": {
+        "plan_id": "<? $planos.plans[2].id ?>"
+      },
+      "conditions": "@sys-number:3 || @Planos:enterprise",
+      "dialog_node": "response_10_1659017560251",
+      "previous_sibling": "response_2_1659017553415"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_4_1659039104057",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1659038782420"
+      },
+      "conditions": "anything_else",
+      "dialog_node": "response_10_1659039201475",
+      "previous_sibling": "response_1_1659039169528"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_7_1659042136205",
+      "context": {},
+      "disabled": true,
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_10_1659304289096"
+      },
+      "conditions": "@sys-number:1 || @SmallTalks:Sim",
+      "dialog_node": "response_10_1659042195519"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Perfeito!\n\nAgora vou te apresentar os planos de assinatura que estão disponíveis para você e com excelente preço promocional!\n"
+              },
+              {
+                "text": "1 - Plano <? $planos.plans[0].name ?>\n"
+              },
+              {
+                "text": "2 - Plano <? $planos.plans[1].name ?>\n"
+              },
+              {
+                "text": "3 - Plano <? $planos.plans[2].name ?>\n"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_3_1658938488258",
+      "context": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_3_1659017268666"
+      },
+      "conditions": "$planos",
+      "dialog_node": "response_1_1658939938828",
+      "previous_sibling": "node_3_1659017268666"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_4_1659039104057",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_1_1659038566642"
+      },
+      "conditions": "@cpf_validacao || @sys-number",
+      "dialog_node": "response_1_1659039169528"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "😐 Estamos com problema na consulta de CEP."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_2_1659041140810",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_4_1659040962931"
+      },
+      "conditions": "$valida_cep.erro == true",
+      "dialog_node": "response_1_1659041456888",
+      "previous_sibling": "response_3_1659041158596"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Confirme seu pedido:\n\n🌐 Plano por assinatura <? $planos.plans[1].name ?>\n\nTOTAL\n\nValor PROMOCIONAL: R$ <? $planos.plans[1].free_agents ?>,00\n\n-------------------------------------\n\nTaxa de adesão: GRÁTIS\n\n-------------------------------------\n"
+              },
+              {
+                "text": "1 - Quero esse plano\n"
+              },
+              {
+                "text": "2 - Escolher outro plano"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_3_1659017268666",
+      "context": {
+        "plan_id": "<? $planos.plans[1].id ?>"
+      },
+      "conditions": "@sys-number:2 || @Planos:plus",
+      "dialog_node": "response_2_1659017553415",
+      "previous_sibling": "response_4_1659017534644"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_5_1659038283522",
+      "context": {
+        "valida_cpf": "$valida_cpf.document"
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_1_1659038992442"
+      },
+      "conditions": "$valida_cpf.validation == true",
+      "dialog_node": "response_2_1659038336466"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "CEP: $CEP_\n\nRua: $rua\n\nBairro: $bairro\n\nCidade: $cidade\n\nEstado: $uf\n\nO endereço é esse mesmo?\n"
+              },
+              {
+                "text": "1- Sim\n"
+              },
+              {
+                "text": "2-Não"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_2_1659041140810",
+      "context": {
+        "uf": "$valida_cep.uf",
+        "rua": "$valida_cep.logradouroNome",
+        "CEP_": "$valida_cep.cep",
+        "bairro": "$valida_cep.bairro",
+        "cidade": "$valida_cep.localidade"
+      },
+      "conditions": "$valida_cep",
+      "dialog_node": "response_3_1659041158596",
+      "previous_sibling": "node_7_1659042136205"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Opa, por enquanto, ainda não temos essa opção.\n"
+              },
+              {
+                "text": "Vou te levar ao inicio novamente. 😉"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_6_1659489292614",
+      "conditions": "anything_else",
+      "dialog_node": "response_3_1659490671893",
+      "previous_sibling": "response_6_1659490670171"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Confirme seu pedido:\n\n🌐 Plano por assinatura <? $planos.plans[0].name ?>\n\nTOTAL\n\nValor PROMOCIONAL: R$ <? $planos.plans[0].free_agents ?>,00\n\n-------------------------------------\n\nTaxa de adesão: GRÁTIS\n\n-------------------------------------\n"
+              },
+              {
+                "text": "1 - Quero esse plano\n"
+              },
+              {
+                "text": "2 - Escolher outro plano"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_3_1659017268666",
+      "context": {
+        "plan_id": "<? $planos.plans[0].id ?>"
+      },
+      "conditions": "@sys-number:1 || @Planos:standard",
+      "dialog_node": "response_4_1659017534644",
+      "previous_sibling": "node_6_1659037560826"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Opa, por enquanto, ainda não temos essa opção."
+              },
+              {
+                "text": "Vou te levar ao inicio novamente. 😉"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_3_1659017268666",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "Bem-vindo"
+      },
+      "conditions": "anything_else",
+      "dialog_node": "response_4_1659017567462",
+      "previous_sibling": "response_10_1659017560251"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Preciso que você escolha algum plano para liberarmos ele para você.\n"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_3_1658938488258",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "Bem-vindo"
+      },
+      "conditions": "anything_else",
+      "dialog_node": "response_6_1658939940562",
+      "previous_sibling": "response_1_1658939938828"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Muito bem <? $nome ?>\n"
+              },
+              {
+                "text": "Em breve iremos liberar seu Plano de Assinatura escolhido.\n"
+              },
+              {
+                "text": "Caso precise de algum suporte, você pode entrar em contato diretamente com nossa central no numero 11 3255-1515.\n"
+              },
+              {
+                "text": "Estamos muito felizes em poder te atender com mais esse produto exclusivo.😊\n"
+              },
+              {
+                "text": "Muito obrigado e até breve!\n"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_6_1659489292614",
+      "conditions": "$orderrequest",
+      "dialog_node": "response_6_1659490670171"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ops!\n"
+              },
+              {
+                "text": "O número que você digitou não está correto.\n"
+              },
+              {
+                "text": "Precisamos de um CPF válido."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_5_1659038283522",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_5_1659037832676"
+      },
+      "conditions": "anything_else",
+      "dialog_node": "response_7_1659038458232",
+      "previous_sibling": "response_2_1659038336466"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Opa, por enquanto, ainda não temos essa opção.\n"
+              },
+              {
+                "text": "Vou te levar para o inicio novamente."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_7_1659042136205",
+      "disabled": true,
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "Bem-vindo"
+      },
+      "conditions": "anything_else",
+      "dialog_node": "response_7_1659042240429",
+      "previous_sibling": "response_8_1659042220182"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "O CEP que informou está inválido."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_2_1659041140810",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_1_1659041622247"
+      },
+      "conditions": "$valida_cep.erro == \"Response is not valid 'application/json'.\"",
+      "dialog_node": "response_8_1659041160215",
+      "previous_sibling": "response_1_1659041456888"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_7_1659042136205",
+      "disabled": true,
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_1_1659041622247"
+      },
+      "conditions": "@sys-number:2 || @SmallTalks:Não",
+      "dialog_node": "response_8_1659042220182",
+      "previous_sibling": "response_10_1659042195519"
+    },
+    {
+      "type": "slot",
+      "parent": "node_5_1659038283522",
+      "dialog_node": "slot_9_1659038330951",
+      "previous_sibling": "response_7_1659038458232"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": "Você quis dizer:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "Nenhuma das anteriores"
+    },
+    "human_agent_assist": {
+      "prompt": "Você quis dizer:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    }
+  },
+  "learning_opt_out": false,
+  "name": "Hubchat",
+  "language": "pt-br",
+  "description": ""
+}
